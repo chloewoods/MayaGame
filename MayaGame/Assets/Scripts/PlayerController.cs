@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject ground;
+    private GameManager gameManager;
+
     public float playerSpeed = 1.0f;
     public float turnSpeed = 10.0f;
-    private float yBound = 70f;
+    private float yBound = 60f;
     private float horizontalInput;
     private float verticalInput;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
         }
+        if (transform.position.y < ground.transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x, ground.transform.position.y, transform.position.z);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,7 +60,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Food"))
         {
             Destroy(other.gameObject);
-            Debug.Log("Got food!");
+            gameManager.AddScore(10);
+        }
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Game Over");
         }
     }
 }
