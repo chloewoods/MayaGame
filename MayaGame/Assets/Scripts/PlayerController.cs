@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     public float stunLength = 0.5f;
     public float stunForce = 1.0f;
+    public float stableSpeed = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,26 @@ public class PlayerController : MonoBehaviour
         {
             MovePlayer();
         }
-        
+
+        if (!Input.anyKey && !gameOver && !stunned)
+        {
+            Vector3 currentRotation = transform.eulerAngles;
+
+            float rotationAmount = transform.localEulerAngles.z;
+
+            currentRotation.z -= rotationAmount;
+
+            if (Vector3.Distance(transform.eulerAngles, currentRotation) > 0.01f)
+            {
+                transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.rotation.eulerAngles), Quaternion.Euler(currentRotation), Time.deltaTime * stableSpeed);
+            }
+            else
+            {
+                transform.eulerAngles = currentRotation;
+            }
+            
+        }
+
         ConstrainPlayerPosition();
     }
 
