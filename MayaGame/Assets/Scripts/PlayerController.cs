@@ -6,23 +6,35 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject ground;
     private GameManager gameManager;
+    private Rigidbody playerRb;
+
+    public bool gameOver;
+    public bool stunned;
 
     public float playerSpeed = 1.0f;
     public float turnSpeed = 10.0f;
     private float yBound = 60f;
     private float horizontalInput;
     private float verticalInput;
+    public float stunLength = 0.5f;
+    public float stunForce = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
+        //reference to player rigidbody
+        playerRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-
+        if (!gameOver && !stunned)
+        {
+            MovePlayer();
+        }
+        
         ConstrainPlayerPosition();
     }
 
@@ -60,11 +72,34 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Food"))
         {
             Destroy(other.gameObject);
-            gameManager.AddScore(10);
+            int scoreToAdd = other.gameObject.GetComponent<scoreHolder>().scoreValue;
+            gameManager.AddScore(scoreToAdd);
         }
         if (other.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Game Over");
+            gameOver = true;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            stunned = true;
+            Debug.Log("Collided with obstacle");
+            playerRb.AddForce(Vector3.down * stunForce, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.back * stunForce, ForceMode.Impulse);
+            StartCoroutine(StunCountdownRoutine());
+        }
+    }
+
+    IEnumerator StunCountdownRoutine()
+    {
+        //wait 0.5 seconds before unstun
+        yield return new WaitForSeconds(stunLength);
+        playerRb.velocity = Vector3.zero;
+        stunned = false;
+    }
+
 }

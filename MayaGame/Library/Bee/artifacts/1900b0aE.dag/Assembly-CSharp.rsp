@@ -355,6 +355,7 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Rotate.cs"
+"Assets/Scripts/scoreHolder.cs"
 -langversion:9.0
 
 /deterministic
