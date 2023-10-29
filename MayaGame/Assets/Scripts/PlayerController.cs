@@ -47,4 +47,13 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Food"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Got food!");
+        }
+    }
 }
