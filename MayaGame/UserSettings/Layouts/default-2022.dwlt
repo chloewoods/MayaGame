@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 976
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -480,7 +480,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 54590000
     m_LastClickedID: 22868
-    m_ExpandedIDs: 000000001a6f00001c6f00001e6f0000206f0000226f0000
+    m_ExpandedIDs: 00000000745b0000765b0000785b00007a5b00007c5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,7 +508,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000001a6f00001c6f00001e6f0000206f0000226f0000
+    m_ExpandedIDs: ffffffff00000000745b0000765b0000785b00007a5b00007c5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -992,9 +992,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 20.924656, y: 40.615852, z: 25.905449}
+    m_Target: {x: 6.406916, y: 1.8244973, z: 12.355854}
     speed: 2
-    m_Value: {x: 20.924656, y: 40.615852, z: 25.905449}
+    m_Value: {x: 6.406916, y: 1.8244973, z: 12.355854}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1040,13 +1040,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.51460993, y: 0.42741674, z: -0.3309481, w: -0.66570705}
+    m_Target: {x: -0.021895451, y: -0.5625681, z: 0.014587933, w: -0.8264707}
     speed: 2
-    m_Value: {x: -0.5145582, y: 0.4273738, z: -0.33091486, w: -0.6656402}
+    m_Value: {x: -0.021871042, y: -0.5637427, z: 0.014619088, w: -0.8255314}
   m_Size:
-    m_Target: 75.394844
+    m_Target: 29.25603
     speed: 2
-    m_Value: 75.394844
+    m_Value: 27.9962
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1108,23 +1108,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: d082ffffa86d0000486e00004c6e00005e6e0000
+      m_SelectedIDs: f4590000
+      m_LastClickedID: 23028
+      m_ExpandedIDs: 7ef5ffff1afaffff025a0000845a0000a25a0000b85a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Wall
-        m_OriginalName: Wall
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 28222
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
