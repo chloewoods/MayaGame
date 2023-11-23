@@ -8,17 +8,22 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
-    public bool gameOver;
+    public bool isGameActive;
     public int foodCount;
+    private float timeRemaining = 60;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI levelCompletedText;
-    public Button restartButton;
+    public TextMeshProUGUI timeText;
+    public GameObject gameOverScreen;
+    public GameObject levelCompleteScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
         AddScore(score);
     }
 
@@ -30,6 +35,19 @@ public class GameManager : MonoBehaviour
         {
             LevelCompleted();
         }
+
+        if (isGameActive)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                GameOver();
+            }
+        }
     }
 
     public void AddScore(int scoreToAdd)
@@ -40,9 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        gameOver = true;
+        gameOverScreen.gameObject.SetActive(true);
+        isGameActive = false;
     }
 
     public void RestartGame()
@@ -51,10 +68,23 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void OpenTitleScreen()
+    {
+        SceneManager.LoadScene("Title Screen");
+
+    }
+
     public void LevelCompleted()
     {
-        levelCompletedText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        gameOver = true;
+        levelCompleteScreen.gameObject.SetActive(true);
+        isGameActive = false;
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

@@ -17,7 +17,7 @@ public class Rotate : MonoBehaviour
     void Update()
     {
         //Objects should only rotate when game is active
-        if (!gameManager.gameOver)
+        if (gameManager.isGameActive)
         {
             transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed);
         }

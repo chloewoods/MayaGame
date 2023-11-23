@@ -31,12 +31,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.gameOver && !stunned)
+        if (gameManager.isGameActive && !stunned)
         {
             MovePlayer();
         }
 
-        if (!Input.anyKey && !gameManager.gameOver && !stunned)
+        if (!Input.anyKey && gameManager.isGameActive && !stunned)
         {
             SteadyPlayer();
         }

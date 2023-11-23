@@ -17,7 +17,9 @@ extern void GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41 (void);
 extern void GameManager_AddScore_m7F9C51FCFD3F61B8B6970D9D09D812790371B143 (void);
 extern void GameManager_GameOver_mF1BD400E7F84A0B533A58E80ADA7CCB89C964625 (void);
 extern void GameManager_RestartGame_m03813C863F1F1ABB9DC30BC371E2F088D7B01F75 (void);
+extern void GameManager_OpenTitleScreen_mF1A9063E8943373195595CC30B736EA416462543 (void);
 extern void GameManager_LevelCompleted_mD12674BEC741AFFAFC10CD542A7EB70FF2276068 (void);
+extern void GameManager_DisplayTime_m7CB231CEB4684E69E14D0D6B1104A9CB29D321E7 (void);
 extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
 extern void PlayerController_Start_m1D83076E8B136A71051F2F02545EE04947D3A8CF (void);
 extern void PlayerController_Update_m1F4051EB5BCBCCE5EEE2E3E49B7E278C3B14EC33 (void);
@@ -40,6 +42,10 @@ extern void Rotate__ctor_m0EE5CC8EB699542BFC438DC3D547D39E442E9EE4 (void);
 extern void scoreHolder_Start_mA55082C0776A63AD93D11586469C65C47F30A697 (void);
 extern void scoreHolder_Update_mD138F0EBE1E3DBE86F1B039F5EBA7C3CAD56A7C3 (void);
 extern void scoreHolder__ctor_m066B38437431737D54ECBCC28BAE62F1A486D5FF (void);
+extern void TitleButtons_Start_m8F59962D7193036DA0E1517202F749072E23207D (void);
+extern void TitleButtons_Update_mB6BE779F488AFF4D2070668E34EC6EB2F888CA9D (void);
+extern void TitleButtons_LoadScene_mD4E5E5196A5A1BAE6EC1B0D54B70F8940A1342D1 (void);
+extern void TitleButtons__ctor_m1784419B65F9D87C457C242829958BBAB4C4FA7A (void);
 extern void ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7 (void);
 extern void ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46 (void);
 extern void ChatController_AddToChatOutput_m9AB8FA8A32EA23F2E55795D8301ED0BF6A59F722 (void);
@@ -639,6 +645,9 @@ extern void AotStubs_Rotate_op_Inequality_mD1257DCE58C9F9B59FCDADA1DAD1D586A85DB
 extern void AotStubs_scoreHolder_op_Implicit_m9A37BAB48AB3C11E0E49EEF36077D000FD6BA294 (void);
 extern void AotStubs_scoreHolder_op_Equality_m8215D6350A5F4E627F012DDC06A6D452ECEE6FC6 (void);
 extern void AotStubs_scoreHolder_op_Inequality_m22F8E846A19C425DF9F13416B04B46F73DEF48D9 (void);
+extern void AotStubs_TitleButtons_op_Implicit_m1EEFB18A11C08A6B05C6ABAE495FFF92F37FE60D (void);
+extern void AotStubs_TitleButtons_op_Equality_m859C1F3CE9D32D5DEC71EFE0C259D2C056D207FC (void);
+extern void AotStubs_TitleButtons_op_Inequality_m9FC3FC89CE30B6D16DD64E4A13F3590796AAD677 (void);
 extern void AotStubs_ChatController_op_Implicit_m27831035BA6BFD45BD67BA6C23E49588676562E9 (void);
 extern void AotStubs_ChatController_op_Equality_mAB6DC35A4BDB0EF295B60404C2270BD3A863FDC0 (void);
 extern void AotStubs_ChatController_op_Inequality_m27DE6B5DF1B0FD607D9A3955D868F2BBF729629C (void);
@@ -1208,14 +1217,16 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[1196] = 
+static Il2CppMethodPointer s_methodPointers[1205] = 
 {
 	GameManager_Start_m87A71D65F3171A58DBDDBFB03832ADA65643D0E2,
 	GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41,
 	GameManager_AddScore_m7F9C51FCFD3F61B8B6970D9D09D812790371B143,
 	GameManager_GameOver_mF1BD400E7F84A0B533A58E80ADA7CCB89C964625,
 	GameManager_RestartGame_m03813C863F1F1ABB9DC30BC371E2F088D7B01F75,
+	GameManager_OpenTitleScreen_mF1A9063E8943373195595CC30B736EA416462543,
 	GameManager_LevelCompleted_mD12674BEC741AFFAFC10CD542A7EB70FF2276068,
+	GameManager_DisplayTime_m7CB231CEB4684E69E14D0D6B1104A9CB29D321E7,
 	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
 	PlayerController_Start_m1D83076E8B136A71051F2F02545EE04947D3A8CF,
 	PlayerController_Update_m1F4051EB5BCBCCE5EEE2E3E49B7E278C3B14EC33,
@@ -1238,6 +1249,10 @@ static Il2CppMethodPointer s_methodPointers[1196] =
 	scoreHolder_Start_mA55082C0776A63AD93D11586469C65C47F30A697,
 	scoreHolder_Update_mD138F0EBE1E3DBE86F1B039F5EBA7C3CAD56A7C3,
 	scoreHolder__ctor_m066B38437431737D54ECBCC28BAE62F1A486D5FF,
+	TitleButtons_Start_m8F59962D7193036DA0E1517202F749072E23207D,
+	TitleButtons_Update_mB6BE779F488AFF4D2070668E34EC6EB2F888CA9D,
+	TitleButtons_LoadScene_mD4E5E5196A5A1BAE6EC1B0D54B70F8940A1342D1,
+	TitleButtons__ctor_m1784419B65F9D87C457C242829958BBAB4C4FA7A,
 	ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7,
 	ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46,
 	ChatController_AddToChatOutput_m9AB8FA8A32EA23F2E55795D8301ED0BF6A59F722,
@@ -1837,6 +1852,9 @@ static Il2CppMethodPointer s_methodPointers[1196] =
 	AotStubs_scoreHolder_op_Implicit_m9A37BAB48AB3C11E0E49EEF36077D000FD6BA294,
 	AotStubs_scoreHolder_op_Equality_m8215D6350A5F4E627F012DDC06A6D452ECEE6FC6,
 	AotStubs_scoreHolder_op_Inequality_m22F8E846A19C425DF9F13416B04B46F73DEF48D9,
+	AotStubs_TitleButtons_op_Implicit_m1EEFB18A11C08A6B05C6ABAE495FFF92F37FE60D,
+	AotStubs_TitleButtons_op_Equality_m859C1F3CE9D32D5DEC71EFE0C259D2C056D207FC,
+	AotStubs_TitleButtons_op_Inequality_m9FC3FC89CE30B6D16DD64E4A13F3590796AAD677,
 	AotStubs_ChatController_op_Implicit_m27831035BA6BFD45BD67BA6C23E49588676562E9,
 	AotStubs_ChatController_op_Equality_mAB6DC35A4BDB0EF295B60404C2270BD3A863FDC0,
 	AotStubs_ChatController_op_Inequality_m27DE6B5DF1B0FD607D9A3955D868F2BBF729629C,
@@ -2407,7 +2425,7 @@ static Il2CppMethodPointer s_methodPointers[1196] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[1196] = 
+static const int32_t s_InvokerIndices[1205] = 
 {
 	5162,
 	5162,
@@ -2415,6 +2433,8 @@ static const int32_t s_InvokerIndices[1196] =
 	5162,
 	5162,
 	5162,
+	5162,
+	4217,
 	5162,
 	5162,
 	5162,
@@ -2431,6 +2451,10 @@ static const int32_t s_InvokerIndices[1196] =
 	5060,
 	5162,
 	5060,
+	5162,
+	5162,
+	5162,
+	5162,
 	5162,
 	5162,
 	5162,
@@ -2454,6 +2478,9 @@ static const int32_t s_InvokerIndices[1196] =
 	5060,
 	7298,
 	5162,
+	7294,
+	7294,
+	7294,
 	7294,
 	7294,
 	7294,
@@ -3610,7 +3637,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	1196,
+	1205,
 	s_methodPointers,
 	0,
 	NULL,
