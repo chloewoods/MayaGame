@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     private bool stunned;
     public float stunLength = 0.5f;
     public float stunForce = 1.0f;
+
+    public AudioClip eatSound;
+    public AudioClip bumpSound;
+    public AudioClip dieSound;
+    private AudioSource playerAudio;
     
 
     // Start is called before the first frame update
@@ -26,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -81,6 +87,7 @@ public class PlayerController : MonoBehaviour
         // If object is food, eat and add score
         if (other.gameObject.CompareTag("Food"))
         {
+            playerAudio.PlayOneShot(eatSound, 1.0f);
             Destroy(other.gameObject);
             int scoreToAdd = other.gameObject.GetComponent<scoreHolder>().scoreValue;
             gameManager.AddScore(scoreToAdd);
@@ -89,6 +96,7 @@ public class PlayerController : MonoBehaviour
         // If player hits ground, game over
         if (other.gameObject.CompareTag("Ground"))
         {
+            playerAudio.PlayOneShot(dieSound, 1.0f);
             gameManager.GameOver();
             
         }
@@ -99,6 +107,7 @@ public class PlayerController : MonoBehaviour
         // If player collides with obstacle, push player back and down
         if(collision.gameObject.CompareTag("Obstacle"))
         {
+            playerAudio.PlayOneShot(bumpSound, 1.0f);
             stunned = true;
             playerRb.AddForce(Vector3.down * stunForce, ForceMode.Impulse);
             playerRb.AddForce(Vector3.back * stunForce, ForceMode.Impulse);
