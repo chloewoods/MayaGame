@@ -9029,6 +9029,10 @@ PrefabInstance:
       propertyPath: bumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 95fd0f6e4593b4e09b3d513839039d96, type: 3}
+    - target: {fileID: 5138820811461354203, guid: 5620813164449af4ba75f101ff8bf4f1, type: 3}
+      propertyPath: speedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 905e1af2b37fa452c829ae0edd42add1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

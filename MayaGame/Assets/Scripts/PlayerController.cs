@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private GameManager gameManager;
     private Rigidbody playerRb;
 
-    public float playerSpeed = 1.0f;
+    public float playerSpeed = 12.0f;
     public float turnSpeed = 10.0f;
     public float stableSpeed = 3.0f;
 
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip eatSound;
     public AudioClip bumpSound;
     public AudioClip dieSound;
+    public AudioClip speedSound;
     private AudioSource playerAudio;
     
     
@@ -40,12 +41,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.isGameActive && !stunned)
+        
+        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            playerSpeed = 24;
+        }
+        else
+        {
+            playerSpeed = 12;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerAudio.PlayOneShot(speedSound, 1.0f);
+        }
+
+            if (gameManager.isGameActive && !stunned)
         {
             MovePlayer();
         }
 
-        if (!Input.anyKey && gameManager.isGameActive && !stunned)
+        if (Input.GetAxis("Horizontal") == 0 && gameManager.isGameActive && !stunned)
         {
             SteadyPlayer();
         }
