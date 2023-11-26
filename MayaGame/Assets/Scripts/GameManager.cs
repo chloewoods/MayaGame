@@ -19,12 +19,17 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject levelCompleteScreen;
 
+    public AudioClip countdownSound;
+    public AudioClip completeSound;
+    private AudioSource gameAudio;
+
 
     // Start is called before the first frame update
     void Start()
     {
         isGameActive = true;
         AddScore(score);
+        gameAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,7 @@ public class GameManager : MonoBehaviour
         foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
         if (foodCount == 0)
         {
+            gameAudio.PlayOneShot(completeSound, 1.0f);
             LevelCompleted();
         }
 
@@ -46,6 +52,11 @@ public class GameManager : MonoBehaviour
             else
             {
                 GameOver();
+            }
+
+            if (timeRemaining < 3)
+            {
+                gameAudio.PlayOneShot(countdownSound, 1.0f);
             }
         }
     }

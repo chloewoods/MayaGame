@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
-    private float yBound = 30f;
+    private float yBound = 40f;
     public float xzBound = 80f;
 
     private bool stunned;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip bumpSound;
     public AudioClip dieSound;
     private AudioSource playerAudio;
+    
     
 
     // Start is called before the first frame update
