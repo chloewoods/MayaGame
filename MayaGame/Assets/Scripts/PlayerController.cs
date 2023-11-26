@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,7 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
-    private float yBound = 60f;
+    private float yBound = 30f;
+    public float xzBound = 80f;
 
     private bool stunned;
     public float stunLength = 0.5f;
@@ -79,6 +81,26 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < ground.transform.position.y)
         {
             transform.position = new Vector3(transform.position.x, ground.transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.z > xzBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, xzBound);
+        }
+
+        if (transform.position.z < -xzBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -xzBound);
+        }
+
+        if (transform.position.x > xzBound)
+        {
+            transform.position = new Vector3(xzBound, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x < -xzBound)
+        {
+            transform.position = new Vector3(-xzBound, transform.position.y, transform.position.z);
         }
     }
 
