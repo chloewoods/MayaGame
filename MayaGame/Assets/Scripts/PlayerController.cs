@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public string inputID;
+    
     public GameObject ground;
     private GameManager gameManager;
     private Rigidbody playerRb;
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip dieSound;
     public AudioClip speedSound;
     private AudioSource playerAudio;
+
+    public ParticleSystem stunEffect;
+    public ParticleSystem wingSpeed;
     
     
 
@@ -42,22 +47,48 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
-        
-        if (Input.GetKey(KeyCode.Space))
+        if (inputID == "1" || inputID == "0") 
         {
-            playerSpeed = 24;
-        }
-        else
-        {
-            playerSpeed = 12;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                playerSpeed = 24;
+
+            }
+            else
+            {
+                playerSpeed = 12;
+                wingSpeed.Stop();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                wingSpeed.Play();
+                playerAudio.PlayOneShot(speedSound, 1.0f);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (inputID == "2")
         {
-            playerAudio.PlayOneShot(speedSound, 1.0f);
+            if (Input.GetKey(KeyCode.RightControl))
+            {
+                playerSpeed = 24;
+
+            }
+            else
+            {
+                playerSpeed = 12;
+                wingSpeed.Stop();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightControl))
+            {
+                wingSpeed.Play();
+                playerAudio.PlayOneShot(speedSound, 1.0f);
+            }
         }
 
-            if (gameManager.isGameActive && !stunned)
+
+        if (gameManager.isGameActive && !stunned)
         {
             MovePlayer();
         }
@@ -76,12 +107,12 @@ public class PlayerController : MonoBehaviour
         //Player automatically goes forward
         transform.Translate(Vector3.forward * playerSpeed * Time.deltaTime);
         //Check if there is a left or right input
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal"+ inputID);
         //Rotate the player right or left depending on input
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
         //Check if there is a up or down input
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Vertical" + inputID);
         //Rotate the player up or down depending on input
         transform.Rotate(Vector3.left, Time.deltaTime * turnSpeed * verticalInput);
     }
@@ -148,6 +179,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Obstacle"))
         {
             playerAudio.PlayOneShot(bumpSound, 1.0f);
+            stunEffect.Play();
             stunned = true;
             playerRb.AddForce(Vector3.down * stunForce, ForceMode.Impulse);
             playerRb.AddForce(Vector3.back * stunForce, ForceMode.Impulse);

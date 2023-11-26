@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     public bool isGameActive;
     public int foodCount;
-    private float timeRemaining = 60;
+    public float timeRemaining = 60;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -83,6 +83,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Title Screen");
 
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LevelCompleted()
