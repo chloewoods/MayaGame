@@ -46,7 +46,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Speed Boost Controller
+        // We change the player speed when input is held down
+        // The input required changes for 2 player
+
+        //In single player or for player 1. When space bar is pressed, speed is increased
+        //TODO: can we make this a function - will require a float return
         if (inputID == "1" || inputID == "0") 
         {
             if (Input.GetKey(KeyCode.Space))
@@ -60,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 wingSpeed.Stop();
             }
 
+            //SFX and VFX play
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 wingSpeed.Play();
@@ -67,6 +73,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // If using player 2, Right Control activates speed increase
         if (inputID == "2")
         {
             if (Input.GetKey(KeyCode.RightControl))
@@ -87,17 +94,21 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //While game is active, player is moving forward
 
         if (gameManager.isGameActive && !stunned)
         {
             MovePlayer();
         }
 
+
+        // When player stops turning, bring player back to neutral position
         if (Input.GetAxis("Horizontal") == 0 && gameManager.isGameActive && !stunned)
         {
             SteadyPlayer();
         }
 
+        //Prevent player from leaving the level
         ConstrainPlayerPosition();
     }
 
@@ -131,6 +142,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, ground.transform.position.y, transform.position.z);
         }
+
+        //Prevent player from leaving x and z bounds
 
         if (transform.position.z > xzBound)
         {
@@ -195,6 +208,7 @@ public class PlayerController : MonoBehaviour
         stunned = false;
     }
 
+    //Return player back to a neutral position
     void SteadyPlayer()
     {
         //Find current z component rotation

@@ -19,7 +19,9 @@
           {
             "name": "NavMeshSettings",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 1,
@@ -37,8 +39,16 @@
             "icon": null
           },
           {
-            "name": "Animator",
+            "name": "AnimationClip",
             "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Animator",
+            "scenes": [
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -55,10 +65,36 @@
             "icon": null
           },
           {
+            "name": "Avatar",
+            "scenes": [
+              "Assets/Scenes/Level 2.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AvatarMask",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Motion",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "RuntimeAnimatorController",
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -68,7 +104,9 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -76,14 +114,21 @@
           },
           {
             "name": "AudioClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -96,10 +141,32 @@
             "icon": null
           },
           {
+            "name": "AudioSource",
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "SampleClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
+            ],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -121,7 +188,9 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -142,7 +211,9 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -163,7 +234,9 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 1,
@@ -178,7 +251,9 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -203,9 +278,20 @@
             "icon": null
           },
           {
+            "name": "LODGroup",
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 1,
@@ -214,7 +300,9 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -235,7 +323,9 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -250,7 +340,9 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -259,7 +351,10 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -267,7 +362,10 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -275,7 +373,10 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
+              "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -283,7 +384,9 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -298,7 +401,9 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 1,
@@ -307,7 +412,9 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 1,
@@ -340,7 +447,9 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -355,7 +464,9 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -388,7 +499,9 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -401,6 +514,14 @@
             "icon": null
           },
           {
+            "name": "SkinnedMeshRenderer",
+            "scenes": [
+              "Assets/Scenes/Level 2.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "SortingGroup",
             "scenes": [],
             "dependencyType": 0,
@@ -409,7 +530,9 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -423,7 +546,11 @@
           },
           {
             "name": "SpriteRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -494,10 +621,22 @@
             "icon": "package/com.unity.modules.audio"
           },
           {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
+          },
+          {
             "name": "Required by IMGUI Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.imgui"
+          },
+          {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
           },
           {
             "name": "Required by InputLegacy Module",
@@ -536,6 +675,18 @@
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
           },
           {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
+          },
+          {
+            "name": "Required by Terrain Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrain"
+          },
+          {
             "name": "Required by TextCoreFontEngine Module",
             "scenes": [],
             "dependencyType": 2,
@@ -566,10 +717,33 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by VFX Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vfx"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
+        "name": "Director",
+        "dependencies": [
+          {
+            "name": "PlayableDirector",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },
@@ -581,6 +755,17 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          }
+        ]
+      },
+      {
+        "name": "Input",
+        "dependencies": [
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -605,16 +790,34 @@
         "name": "JSONSerialize",
         "dependencies": [
           {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
           },
           {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
+          },
+          {
             "name": "Required by UIElements Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -623,13 +826,21 @@
         "dependencies": [
           {
             "name": "ParticleSystem",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "ParticleSystemRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           }
@@ -641,7 +852,9 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -649,7 +862,9 @@
           {
             "name": "CapsuleCollider",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -669,7 +884,9 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -683,7 +900,9 @@
           {
             "name": "Rigidbody",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -691,10 +910,18 @@
           {
             "name": "SphereCollider",
             "scenes": [
-              "Assets/Scenes/My Game.unity"
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
             "icon": null
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -766,10 +993,22 @@
             "icon": "package/com.unity.modules.core"
           },
           {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
+          },
+          {
             "name": "Required by IMGUI Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.imgui"
+          },
+          {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
           },
           {
             "name": "Required by InputLegacy Module",
@@ -808,6 +1047,18 @@
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
           },
           {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
+          },
+          {
+            "name": "Required by Terrain Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.terrain"
+          },
+          {
             "name": "Required by TextCoreFontEngine Module",
             "scenes": [],
             "dependencyType": 2,
@@ -838,10 +1089,50 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by VFX Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vfx"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
+        "name": "Subsystems",
+        "dependencies": [
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
+        "name": "Terrain",
+        "dependencies": [
+          {
+            "name": "Terrain",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "TerrainData",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },
@@ -885,7 +1176,9 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -935,7 +1228,9 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -950,7 +1245,9 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/My Game.unity",
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity",
               "Assets/Scenes/Title Screen.unity"
             ],
             "dependencyType": 0,
@@ -969,6 +1266,35 @@
         "dependencies": []
       },
       {
+        "name": "VFX",
+        "dependencies": [
+          {
+            "name": "VFXManager",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "VisualEffect",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "VisualEffectAsset",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "VisualEffectObject",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          }
+        ]
+      },
+      {
         "name": "WebGL",
         "dependencies": [
           {
@@ -978,6 +1304,10 @@
             "icon": "class/DefaultAsset"
           }
         ]
+      },
+      {
+        "name": "XR",
+        "dependencies": []
       }
     ]
   }

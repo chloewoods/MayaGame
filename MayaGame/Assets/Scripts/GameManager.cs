@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public int foodCount;
     public float timeRemaining = 60;
+    private bool timerSoundPlayed = false;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -35,15 +36,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
-        if (foodCount == 0)
-        {
-            gameAudio.PlayOneShot(completeSound, 1.0f);
-            LevelCompleted();
-        }
-
         if (isGameActive)
         {
+            //Count down on clock until 0. When time runs out, the game is over
+            //TODO: Make function
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -54,9 +50,18 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
 
-            if (timeRemaining < 3)
+            if (timeRemaining < 3 && !timerSoundPlayed)
             {
                 gameAudio.PlayOneShot(countdownSound, 1.0f);
+                timerSoundPlayed = true;
+            }
+
+            //When there are no more food objects in level, the level is complete
+            foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
+            if (foodCount == 0)
+            {
+                gameAudio.PlayOneShot(completeSound, 1.0f);
+                LevelCompleted();
             }
         }
     }
@@ -90,12 +95,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //Stop game and display level complete screen
     public void LevelCompleted()
     {
         levelCompleteScreen.gameObject.SetActive(true);
         isGameActive = false;
     }
 
+    //Display time left in UI
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
