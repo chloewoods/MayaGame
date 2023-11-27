@@ -10,8 +10,7 @@
 - Obstacles stun the player
 
 ### Features behind schedule
-- Player cannot leave level*
-*This was assumed to be complete but game testing after Alpha submission showed that the wall boundaries were not working properly and the player could leave.
+- Player cannot leave level. This was assumed to be complete but game testing after Alpha submission showed that the wall boundaries were not working properly and the player could leave.
 
 ### Features ahead of schedule 
 - Game over screen implemented
