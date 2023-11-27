@@ -17,6 +17,7 @@
 
 ## Beta Submission
 ### Proposed game features in place
+- Player cannot leave level
 - Timer counts down and is displayed In UI
 - Game over screen implemented
 - Speed boost implemented
