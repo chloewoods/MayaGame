@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private float timePassed = 0;
     public float maxTime = 60;
     private bool timerSoundPlayed = false;
+    private bool canPause = true;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeFinalText;
     public GameObject gameOverScreen;
     public GameObject levelCompleteScreen;
+    public GameObject pauseScreen;
 
     public AudioClip countdownSound;
     public AudioClip completeSound;
@@ -39,6 +41,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+
         if (isGameActive)
         {
             //Count down on clock until 0. When time runs out, the game is over
@@ -68,6 +76,8 @@ public class GameManager : MonoBehaviour
                 LevelCompleted();
             }
 
+            
+
         }
     }
 
@@ -77,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.gameObject.SetActive(true);
         isGameActive = false;
+        canPause = false;
     }
 
     public void RestartGame()
@@ -101,6 +112,7 @@ public class GameManager : MonoBehaviour
     {
         levelCompleteScreen.gameObject.SetActive(true);
         isGameActive = false;
+        canPause = false;
         DisplayFinalTime(timePassed);
     }
 
@@ -117,5 +129,19 @@ public class GameManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeFinalText.text = string.Format("Time = {0:00}:{1:00}", minutes, seconds);
+    }
+
+    void PauseGame()
+    {
+        if (isGameActive && canPause)
+        {
+            isGameActive = false;
+            pauseScreen.gameObject.SetActive(true);
+        }
+        else if (canPause)
+        {
+            pauseScreen.gameObject.SetActive(false);
+            isGameActive=true;
+        }
     }
 }

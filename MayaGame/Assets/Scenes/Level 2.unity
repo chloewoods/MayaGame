@@ -5116,6 +5116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 493634058}
     - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 9058748920377039607}
+    - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1131745654}
@@ -7812,13 +7816,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 1034141994158828252, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_text
-      value: 'Treats = '
+    - target: {fileID: 1257769187767834320, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1323857380}
+    - target: {fileID: 1257769187767834320, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
       objectReference: {fileID: 0}
-    - target: {fileID: 1034141994158828252, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_enableWordWrapping
-      value: 0
+    - target: {fileID: 3219973280685595273, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1323857380}
+    - target: {fileID: 3219973280685595273, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenTitleScreen
       objectReference: {fileID: 0}
     - target: {fileID: 6467467714038494002, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7913,6 +7925,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+--- !u!1 &9058748920377039607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2126027643578507350, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+  m_PrefabInstance: {fileID: 9058748920377039606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
