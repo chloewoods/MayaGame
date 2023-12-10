@@ -4336,6 +4336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1469626736843986366, guid: 23e0b313f3ba8f44daaa11855f8b2c69, type: 3}
   m_PrefabInstance: {fileID: 323806749}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1187641203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2919553831539623064, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+  m_PrefabInstance: {fileID: 1097716874869378671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1200536941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7264948095429077779, guid: f90599803d4f82842b2d47eda1130be7, type: 3}
@@ -6976,58 +6987,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 229970599572069030, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 440853190307849718, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 440853190307849718, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 1257769187767834320, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 1257769187767834320, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 2639349917836843770, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 2639349917836843770, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 3219973280685595273, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 3219973280685595273, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenTitleScreen
-      objectReference: {fileID: 0}
     - target: {fileID: 6467467714038494002, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 6467467714038494002, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenTitleScreen
-      objectReference: {fileID: 0}
     - target: {fileID: 7041429434981100715, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1323857380}
-    - target: {fileID: 7041429434981100715, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenTitleScreen
-      objectReference: {fileID: 0}
     - target: {fileID: 8587099888177161379, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7519,6 +7502,10 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1097716874869378676}
+    - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
+      propertyPath: highScoreText
+      value: 
+      objectReference: {fileID: 1187641203}
     - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
       propertyPath: timeFinalText
       value: 

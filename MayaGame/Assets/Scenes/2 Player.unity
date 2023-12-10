@@ -3531,6 +3531,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 231560877}
     - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
+      propertyPath: highScoreText
+      value: 
+      objectReference: {fileID: 964192928}
+    - target: {fileID: 571165208016390907, guid: 3eb677ea6ff1f59498f9069abae64b10, type: 3}
       propertyPath: timeFinalText
       value: 
       objectReference: {fileID: 231560874}
@@ -4495,6 +4499,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f90599803d4f82842b2d47eda1130be7, type: 3}
+--- !u!114 &964192928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2919553831539623064, guid: dd57ab6688dd44843a935a8221605da8, type: 3}
+  m_PrefabInstance: {fileID: 231560872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &991430660
 PrefabInstance:
   m_ObjectHideFlags: 0

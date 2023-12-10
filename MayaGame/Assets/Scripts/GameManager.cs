@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI levelCompletedText;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI timeFinalText;
+    public TextMeshProUGUI highScoreText;
     public GameObject gameOverScreen;
     public GameObject levelCompleteScreen;
     public GameObject pauseScreen;
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         canPause = false;
         DisplayFinalTime(timePassed);
+        DisplayHighScore(timePassed);
     }
 
     //Display time left in UI
@@ -129,6 +131,20 @@ public class GameManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeFinalText.text = string.Format("Time = {0:00}:{1:00}", minutes, seconds);
+    }
+
+    void DisplayHighScore(float timeTaken)
+    {
+        float highScore = PlayerPrefs.GetFloat("highScore_" + SceneManager.GetActiveScene().name, 60);
+        if (timeTaken < highScore)
+        {
+            highScore = timeTaken;
+            PlayerPrefs.SetFloat("highScore_" + SceneManager.GetActiveScene().name, highScore);
+
+        }
+        float minutes = Mathf.FloorToInt(highScore / 60);
+        float seconds = Mathf.FloorToInt(highScore % 60);
+        highScoreText.text = string.Format("High Score = {0:00}:{1:00}", minutes, seconds);
     }
 
     void PauseGame()
