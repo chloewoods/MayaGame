@@ -10,13 +10,15 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public bool isGameActive;
     public int foodCount;
-    public float timeRemaining = 60;
+    private float timePassed = 0;
+    public float maxTime = 60;
     private bool timerSoundPlayed = false;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI levelCompletedText;
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI timeFinalText;
     public GameObject gameOverScreen;
     public GameObject levelCompleteScreen;
 
@@ -29,8 +31,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isGameActive = true;
-        AddScore(score);
         gameAudio = GetComponent<AudioSource>();
+
+
     }
 
     // Update is called once per frame
@@ -40,17 +43,17 @@ public class GameManager : MonoBehaviour
         {
             //Count down on clock until 0. When time runs out, the game is over
             //TODO: Make function
-            if (timeRemaining > 0)
+            if (timePassed < maxTime)
             {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
+                timePassed += Time.deltaTime;
+                DisplayTime(timePassed);
             }
             else
             {
                 GameOver();
             }
 
-            if (timeRemaining < 3 && !timerSoundPlayed)
+            if (timePassed > maxTime-3 && !timerSoundPlayed)
             {
                 gameAudio.PlayOneShot(countdownSound, 1.0f);
                 timerSoundPlayed = true;
@@ -58,19 +61,17 @@ public class GameManager : MonoBehaviour
 
             //When there are no more food objects in level, the level is complete
             foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
+            scoreText.text = "Treats = " + foodCount;
             if (foodCount == 0)
             {
                 gameAudio.PlayOneShot(completeSound, 1.0f);
                 LevelCompleted();
             }
+
         }
     }
 
-    public void AddScore(int scoreToAdd)
-    {
-        score += scoreToAdd;
-        scoreText.text = "Score: " + score;
-    }
+ 
 
     public void GameOver()
     {
@@ -100,14 +101,21 @@ public class GameManager : MonoBehaviour
     {
         levelCompleteScreen.gameObject.SetActive(true);
         isGameActive = false;
+        DisplayFinalTime(timePassed);
     }
 
     //Display time left in UI
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void DisplayFinalTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeFinalText.text = string.Format("Time = {0:00}:{1:00}", minutes, seconds);
     }
 }

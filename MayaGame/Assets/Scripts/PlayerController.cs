@@ -173,8 +173,6 @@ public class PlayerController : MonoBehaviour
         {
             playerAudio.PlayOneShot(eatSound, 1.0f);
             Destroy(other.gameObject);
-            int scoreToAdd = other.gameObject.GetComponent<scoreHolder>().scoreValue;
-            gameManager.AddScore(scoreToAdd);
         }
 
         // If player hits ground, game over
