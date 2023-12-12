@@ -40,13 +40,19 @@
           },
           {
             "name": "AnimationClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "Animator",
             "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
               "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
@@ -54,7 +60,11 @@
           },
           {
             "name": "AnimatorController",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
+              "Assets/Scenes/Level 2.unity"
+            ],
             "dependencyType": 1,
             "icon": null
           },
@@ -81,7 +91,7 @@
           {
             "name": "Motion",
             "scenes": [],
-            "dependencyType": 0,
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -516,6 +526,8 @@
           {
             "name": "SkinnedMeshRenderer",
             "scenes": [
+              "Assets/Scenes/2 Player.unity",
+              "Assets/Scenes/Level 1.unity",
               "Assets/Scenes/Level 2.unity"
             ],
             "dependencyType": 0,
