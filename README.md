@@ -31,3 +31,15 @@
 - Finalse placement of objects in 2 levels
 - Implement two player functionality
 - Main menu can be used to select levels or two player option
+
+- ## Final Submission
+### Proposed game features in place
+- Animations on player character and insects
+- The high score is shown at the end of the end of the level and high scores can be accessed in the menu.
+
+### Feature Alterations/Removals
+- The scoring system works differently now. The aim is now to get all the fruit as fast as you can. The UI displays how much fruit is left and the clock counts upwards. The game captures the fastest times to complete levels.
+- A third level was not implemented
+
+### Additional features
+- Player can pause using esc key
