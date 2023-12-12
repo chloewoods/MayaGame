@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject ground;
     private GameManager gameManager;
     private Rigidbody playerRb;
+    public Animator anim;
 
     public float playerSpeed = 12.0f;
     public float turnSpeed = 10.0f;
@@ -57,11 +58,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 playerSpeed = 24;
+                this.anim.SetBool("speed", true);
 
             }
             else
             {
                 playerSpeed = 12;
+                this.anim.SetBool("speed", false);
                 wingSpeed.Stop();
             }
 
@@ -79,11 +82,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.RightControl))
             {
                 playerSpeed = 24;
+                this.anim.SetBool("speed", true);
 
             }
             else
             {
                 playerSpeed = 12;
+                this.anim.SetBool("speed", false);
                 wingSpeed.Stop();
             }
 
@@ -126,6 +131,11 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical" + inputID);
         //Rotate the player up or down depending on input
         transform.Rotate(Vector3.left, Time.deltaTime * turnSpeed * verticalInput);
+
+        //Animations
+        this.anim.SetFloat("vertical", verticalInput);
+        this.anim.SetFloat("horizontal", horizontalInput);
+
     }
 
     //Prevent the player from leaving level
@@ -192,6 +202,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(bumpSound, 1.0f);
             stunEffect.Play();
             stunned = true;
+            this.anim.SetBool("bump", true);
             playerRb.AddForce(Vector3.down * stunForce, ForceMode.Impulse);
             playerRb.AddForce(Vector3.back * stunForce, ForceMode.Impulse);
             StartCoroutine(StunCountdownRoutine());
@@ -203,6 +214,7 @@ public class PlayerController : MonoBehaviour
         //wait 0.5 seconds before unstun
         yield return new WaitForSeconds(stunLength);
         playerRb.velocity = Vector3.zero;
+        this.anim.SetBool("bump", false);
         stunned = false;
     }
 
