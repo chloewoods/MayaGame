@@ -36,13 +36,12 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         gameAudio = GetComponent<AudioSource>();
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Pause game when esc pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
@@ -50,23 +49,8 @@ public class GameManager : MonoBehaviour
 
         if (isGameActive)
         {
-            //Count down on clock until 0. When time runs out, the game is over
-            //TODO: Make function
-            if (timePassed < maxTime)
-            {
-                timePassed += Time.deltaTime;
-                DisplayTime(timePassed);
-            }
-            else
-            {
-                GameOver();
-            }
-
-            if (timePassed > maxTime-3 && !timerSoundPlayed)
-            {
-                gameAudio.PlayOneShot(countdownSound, 1.0f);
-                timerSoundPlayed = true;
-            }
+            //Keep track of how long player has been in level, game is over when 1 minute has passed
+            TrackTime();
 
             //When there are no more food objects in level, the level is complete
             foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
@@ -82,8 +66,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
- 
+    public void TrackTime()
+    {
+        //Check if time passed is less than max time allowed, then advance clock
+        //When max time reached, game over
+        //Play a sound when time nearly over
+        if (timePassed < maxTime)
+        {
+            timePassed += Time.deltaTime;
+            DisplayTime(timePassed);
+        }
+        else
+        {
+            GameOver();
+        }
 
+        if (timePassed > maxTime - 3 && !timerSoundPlayed)
+        {
+            gameAudio.PlayOneShot(countdownSound, 1.0f);
+            timerSoundPlayed = true;
+        }
+    }
     public void GameOver()
     {
         gameOverScreen.gameObject.SetActive(true);
@@ -108,9 +111,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    //Stop game and display level complete screen
+    
     public void LevelCompleted()
     {
+        //Stop game and display level complete screen
         levelCompleteScreen.gameObject.SetActive(true);
         isGameActive = false;
         canPause = false;
@@ -118,9 +122,10 @@ public class GameManager : MonoBehaviour
         DisplayHighScore(timePassed);
     }
 
-    //Display time left in UI
+    
     void DisplayTime(float timeToDisplay)
     {
+        //Display time left in UI
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -128,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayFinalTime(float timeToDisplay)
     {
+        //Display total time taken in seconds and minutes at the end of the level
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeFinalText.text = string.Format("Time = {0:00}:{1:00}", minutes, seconds);
@@ -135,6 +141,9 @@ public class GameManager : MonoBehaviour
 
     void DisplayHighScore(float timeTaken)
     {
+        // Retreive the high score from player prefs and compare to the time taken this level
+        // if time taken is less than high score, set new high score
+        // then display time and high score in UI
         float highScore = PlayerPrefs.GetFloat("highScore_" + SceneManager.GetActiveScene().name, 60);
         if (timeTaken < highScore)
         {
@@ -149,6 +158,8 @@ public class GameManager : MonoBehaviour
 
     void PauseGame()
     {
+        //Stop game and display options to restart or main menu
+        //canPause bool prevents pausing when level complete or game over happens
         if (isGameActive && canPause)
         {
             isGameActive = false;

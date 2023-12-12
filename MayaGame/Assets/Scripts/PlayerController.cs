@@ -47,63 +47,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Speed Boost Controller
-        // We change the player speed when input is held down
-        // The input required changes for 2 player
-
-        //In single player or for player 1. When space bar is pressed, speed is increased
-        //TODO: can we make this a function - will require a float return
-        if (inputID == "1" || inputID == "0") 
+        //Don't play animations when game is not active
+        if (!gameManager.isGameActive)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                playerSpeed = 24;
-                this.anim.SetBool("speed", true);
-
-            }
-            else
-            {
-                playerSpeed = 12;
-                this.anim.SetBool("speed", false);
-                wingSpeed.Stop();
-            }
-
-            //SFX and VFX play
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                wingSpeed.Play();
-                playerAudio.PlayOneShot(speedSound, 1.0f);
-            }
+            this.anim.enabled = false;
+        }
+        else
+        {
+            this.anim.enabled = true;
         }
 
-        // If using player 2, Right Control activates speed increase
-        if (inputID == "2")
-        {
-            if (Input.GetKey(KeyCode.RightControl))
-            {
-                playerSpeed = 24;
-                this.anim.SetBool("speed", true);
-
-            }
-            else
-            {
-                playerSpeed = 12;
-                this.anim.SetBool("speed", false);
-                wingSpeed.Stop();
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightControl))
-            {
-                wingSpeed.Play();
-                playerAudio.PlayOneShot(speedSound, 1.0f);
-            }
-        }
-
-        //While game is active, player is moving forward
+        //While game is active, player is moving forward and can boost speed
 
         if (gameManager.isGameActive && !stunned)
         {
             MovePlayer();
+            SpeedBoostController();
         }
 
 
@@ -236,6 +195,60 @@ public class PlayerController : MonoBehaviour
         else
         {
             transform.eulerAngles = currentRotation;
+        }
+    }
+
+    void SpeedBoostController()
+    {
+        // Speed Boost Controller
+        // We change the player speed when input is held down
+        // The input required changes for 2 player
+
+        //In single player or for player 1. When space bar is pressed, speed is increased
+        if (inputID == "1" || inputID == "0")
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                playerSpeed = 24;
+                this.anim.SetBool("speed", true);
+
+            }
+            else
+            {
+                playerSpeed = 12;
+                this.anim.SetBool("speed", false);
+                wingSpeed.Stop();
+            }
+
+            //SFX and VFX play
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                wingSpeed.Play();
+                playerAudio.PlayOneShot(speedSound, 1.0f);
+            }
+        }
+
+        // If using player 2, Right Control activates speed increase
+        if (inputID == "2")
+        {
+            if (Input.GetKey(KeyCode.RightControl))
+            {
+                playerSpeed = 24;
+                this.anim.SetBool("speed", true);
+
+            }
+            else
+            {
+                playerSpeed = 12;
+                this.anim.SetBool("speed", false);
+                wingSpeed.Stop();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightControl))
+            {
+                wingSpeed.Play();
+                playerAudio.PlayOneShot(speedSound, 1.0f);
+            }
         }
     }
 

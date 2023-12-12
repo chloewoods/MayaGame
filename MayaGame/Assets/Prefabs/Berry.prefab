@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9117129989422539692}
   - component: {fileID: 1821930488580947061}
   - component: {fileID: 1402044320704533536}
-  - component: {fileID: 5737335948400404923}
   m_Layer: 0
   m_Name: Berry
   m_TagString: Food
@@ -122,19 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 45
---- !u!114 &5737335948400404923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147850111715212704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f99f63facfbdea44bf3fac7097dc89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 20
 --- !u!1001 &1100088005855213188
 PrefabInstance:
   m_ObjectHideFlags: 0
